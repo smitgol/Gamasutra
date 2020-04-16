@@ -1,0 +1,26 @@
+{% include "nav.html" %}
+{% for i in pro %}
+{% if i.id == 8 %}
+<div class="text-center m-5">
+<h1>{{ i.name }}</h1>
+    </div>
+<div class="media">
+  <img src="{{ i.image_url }}" class="mx-5" alt="...">
+  <div class="media-body m-1">
+    <p class="my-5">{{ i.description }}</p>
+    {{ i.req }}
+  </div>
+</div>
+<div class="text-center m-5">
+<h4><u>From below links you can Download the games For Free</u></h4>
+    </div>
+<div class="list-group m-5">
+  <a href="https://gamersmaze.com/tom-clancys-splinter-cell-blacklist-torrent-download/" target="_blank" class="list-group-item list-group-item-action active">
+    Gameres Maze
+  </a>
+  <a href="https://topxgame.com/tom-clancys-splinter-cell-blacklist-free-download/" target="_blank" class="list-group-item list-group-item-action">Top X Games</a>
+  <a href="https://www.namokargamingworld.com/tom-clancys-splinter-cell-blacklist-free-download/" target="_blank" class="list-group-item list-group-item-action">Namokar Gaming World</a>
+  <a href="https://repack-mechanics.com/534-tom-clancys-splinter-cell-blacklist-deluxe-edition-2013-pc-repack-ot-rg-mehaniki.html" target="_blank" class="list-group-item list-group-item-action">R.G Meachanics</a>
+</div>
+{% endif %}
+{% endfor %}

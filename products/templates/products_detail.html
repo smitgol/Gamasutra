@@ -1,0 +1,33 @@
+{% include "nav.html" %}
+<div class="text-center m-5">
+<h1>{{ object.name }}</h1>
+    </div>
+<div class="media">
+  <img src="{{ object.image_url }}" class="mx-5" alt="...">
+  <div class="media-body m-1">
+    <p class="my-5">{{ object.description }}</p>
+    {{ object.req }}
+      <form method="POST"  action="{% url 'cart_add' %}" class="form m-5">
+ {% csrf_token %}
+ <input type="hidden" name="product_id" value="{{ object.id }}">
+ {% if object in cart.products.all %}
+ <button class="btn btn-danger" type="submit">Remove from wishlist</button>
+ {% else %}
+ <button class="btn btn-success" type="submit">ADD to wishlist </button>
+ {% endif %}
+</form>
+  </div>
+</div>
+</div>
+<div class="text-center m-5">
+<h4><u>From below links you can Download the games For Free</u></h4>
+    </div>
+<div class="list-group m-5">
+  <a href="{{ object.url_1 }}" target="_blank" class="list-group-item list-group-item-action active">
+    {{ object.url_1_name }}
+  </a>
+  <a href="{{ object.url_2 }}" target="_blank" class="list-group-item list-group-item-action"> {{ object.url_2_name }}</a>
+  <a href="{{ object.url_3 }}" target="_blank" class="list-group-item list-group-item-action"> {{ object.url_3_name }}</a>
+</div>
+
+

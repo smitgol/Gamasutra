@@ -1,0 +1,26 @@
+{% include "nav.html" %}
+{% for i in pro %}
+{% if i.id == 4 %}
+<div class="text-center m-5">
+<h1>{{ i.name }}</h1>
+    </div>
+<div class="media">
+  <img src="{{ i.image_url }}" class="mx-5" alt="..." height="340px">
+  <div class="media-body m-1">
+    <p class="my-5">{{ i.description }}</p>
+    {{ i.req }}
+  </div>
+</div>
+<div class="text-center m-5">
+<h4><u>From below links you can Download the games For Free</u></h4>
+    </div>
+<div class="list-group m-5">
+  <a href="https://downloads.tomsguide.com/Sniper-Elite-V2,0301-48520.html" target="_blank" class="list-group-item list-group-item-action active">
+    Tom-Guide
+  </a>
+  <a href="https://steamunlocked.net/sniper-elite-v2-free-download/" target="_blank" class="list-group-item list-group-item-action">Steam Unlocked</a>
+  <a href="https://www.thegamesdownload.net/pc/sniper-elite-v2-game/" target="_blank" class="list-group-item list-group-item-action">The games Download</a>
+  <a href="https://install-game.com/sniper-elite-v2-remastered-download/" target="_blank" class="list-group-item list-group-item-action">Install Game</a>
+</div>
+{% endif %}
+{% endfor %}

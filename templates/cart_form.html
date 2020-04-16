@@ -1,0 +1,17 @@
+<html>
+<head>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+<form method="POST" action="{% url 'cart_add' %}">
+ {% csrf_token %}
+ <input type="hidden" name="product_id" value="{{ i.id }}">
+ {% if i in cart.products.all %}
+ <button class="btn btn-danger" type="submit">Remove From wishlist
+</button>
+ {% else %}
+ <button class="btn btn-success" type="submit">Add to wishlist</button>
+ {% endif %}
+</form>
+</body>
+</html>

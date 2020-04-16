@@ -1,0 +1,19 @@
+{% include 'profile.html' %}
+<h1 class="m-5 text-center">Your Wishlist</h1>
+<div class="row mx-5 my-5">
+  {% for i in cart.products.all|slice:":" %}
+  <div class="col m-5">
+        <div class="card" style="width: 14rem;">
+  <img class="card-img-top" src="{{ i.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <a href="{% url 'product-detail' i.id %}" class="btn btn-primary">View</a>
+     {% include 'cart_form.html' %}
+  </div>
+        </div>
+      {% if forloop.counter|divisibleby:6%}
+      {% endif %}
+    </div>
+      {% endfor %}
+</div>
+  </div>

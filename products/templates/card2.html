@@ -1,0 +1,95 @@
+{% include "nav.html" %}
+<div class="text-center">
+  <p class="h1 mx-5 my-5">Games By Type</p>
+  </div>
+  <div class="text-center">
+  <p class="h3 mx-5 my-5">Action</p>
+  </div>
+<div class="row mx-5 my-5">
+  {% for i in pro %}
+  {% if i.sub_category3 == 'Action' %}
+  <div class="col m-5">
+        <div class="card" style="width: 14rem;">
+  <img class="card-img-top" src="{{ i.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <a href="{% url 'product-detail' i.id %}" class="btn btn-primary">View</a>
+  </div>
+   {% include 'cart_form.html' %}
+        </div>
+    {% endif %}
+      {% if forloop.counter|divisibleby:6%}
+      {% endif %}
+    </div>
+      {% endfor %}
+</div>
+ <div class="text-center">
+  <p class="h3 mx-5 my-5">Simulation</p>
+  </div>
+
+<div class="row mx-5 my-5">
+  {% for i in pro %}
+  {% if i.sub_category3 == 'Simulation' %}
+  <div class="col m-5">
+        <div class="card" style="width: 12rem;">
+  <img class="card-img-top" src="{{ i.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <a href="{{ i.id }}" class="btn btn-primary">View</a>
+  </div>
+    {% include 'cart_form.html' %}
+        </div>
+
+      {% if forloop.counter|divisibleby:1%}
+      {% endif %}
+
+    </div>
+  {% endif %}
+      {% endfor %}
+</div>
+ <div class="text-center">
+  <p class="h3 mx-5 my-5">Multiplayer</p>
+  </div>
+
+<div class="row mx-5 my-5">
+  {% for i in pro %}
+  {% if i.sub_category3 == 'Multiplayer' %}
+  <div class="col m-5">
+        <div class="card" style="width: 12rem;">
+  <img class="card-img-top" src="{{ i.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <a href="{{ i.id }}" class="btn btn-primary">View</a>
+  </div>
+      {% include 'cart_form.html' %}
+        </div>
+
+      {% if forloop.counter|divisibleby:6%}
+      {% endif %}
+    </div>
+  {% endif %}
+      {% endfor %}
+</div>
+   <div class="text-center">
+  <p class="h3 mx-5 my-5">Campign</p>
+  </div>
+
+<div class="row mx-5 my-5">
+  {% for i in pro %}
+  {% if i.sub_category3 == 'Campign' %}
+  <div class="col m-5">
+        <div class="card" style="width: 12rem;">
+  <img class="card-img-top" src="{{ i.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <a href="{{ i.id }}" class="btn btn-primary">View</a>
+  </div>
+       {% include 'cart_form.html' %}
+        </div>
+
+      {% if forloop.counter|divisibleby:6%}
+      {% endif %}
+    </div>
+  {% endif %}
+      {% endfor %}
+</div>

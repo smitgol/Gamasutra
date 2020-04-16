@@ -1,0 +1,19 @@
+{% include 'nav.html' %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} m-5">
+{{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% load crispy_forms_tags %}
+    <div class="content-section m-5">
+      <div class="media m-5">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" height="100px" width="100px">
+        <div class="media-body*">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+            <small class="text-secondary"><a href="{% url 'update' %}" class="link">Update info</a> </small>
+        </div>
+      </div>
+    </div>
